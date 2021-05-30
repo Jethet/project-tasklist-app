@@ -24,13 +24,16 @@ h1 {
 }
 
 form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 75%;
   margin: 20px;
 }
 
-.input-field {
+.input-field, .text-input {
   margin: 10px;
-  width: 85%;
+  width: 75%;
 }
 
 footer {
