@@ -8,10 +8,9 @@ app.get("/", (req, res) => {
 })
 
 app.post("/add", (req, res) => {
-  const [todo, description] = req.body
-
-  
-
+  const todo = req.body.todo
+  const description = req.body.description
+  res.send(todo, description)
 })
 
 app.listen(port, () => {
