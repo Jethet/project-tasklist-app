@@ -4,6 +4,10 @@ const db = require("../database/db.json");
 
 const app = express();
 
+// NodeJS project: build a simple webpage with a form to fill in personal details
+//  and retrieve those and show them in the console
+// Next level: write the personal details in a separate file
+// Next level: create a database for the details
 
 app.get("/", (req, res) => {
   console.log("This is a to-do app that uses node.js fs");
