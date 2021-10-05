@@ -4,32 +4,32 @@ const db = require("../database/db.json");
 
 const app = express();
 
-// NodeJS project: build a simple webpage with a form to fill in with to do's,
-//  and retrieve those and show them in the console
-//  Next level: write the to do's in a separate file
-//  Next level: create a database for the to do's
+// NodeJS project: build a simple webpage with a form to fill in with a task,
+//  and retrieve a task and show it in the console
+//  Next level: write the task in a separate file
+//  Next level: create a database for the tasks
 
 app.get("/", (req, res) => {
-  console.log("This is a to-do app that uses node.js fs");
+  console.log("This is a task list app that uses node.js fs");
 })
 
 app.post("/add", (req, res) => {
-  const todo = req.body.todo
+  const task = req.body.task
   const description = req.body.description
-  res.send(todo, description)
+  res.send(task, description)
 })
 
 // Example code from auth project
 // create new todo
-let newTodo = {
+let newTask = {
   id: db.length,
-  todo: todo,
+  task: task,
   description: description
 };
 // add new todo to database array
-db.push(newTodo);
+db.push(newTask);
 //  save the updated database array to the db.json file using fs MUST BE STRING FORMAT
-fs.writeFileSync("./database/db.json", JSON.stringify(newTodo));
+fs.writeFileSync("./database/db.json", JSON.stringify(newTask));
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
