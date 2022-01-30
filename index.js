@@ -1,6 +1,6 @@
 const express = require("express");
 const port = 3000
-const db = require("../database/db.json");
+
 
 const app = express();
 
@@ -10,7 +10,7 @@ const app = express();
 //  Next level: create a database for the tasks
 
 app.get("/", (req, res) => {
-  console.log("This is a task list app that uses node.js fs");
+  console.log("This is a task list app");
 })
 
 app.post("/add", (req, res) => {
@@ -26,10 +26,11 @@ let newTask = {
   task: task,
   description: description
 };
+
 // add new todo to database array
-db.push(newTask);
+
 //  save the updated database array to the db.json file using fs MUST BE STRING FORMAT
-fs.writeFileSync("./database/db.json", JSON.stringify(newTask));
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
